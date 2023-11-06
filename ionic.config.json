@@ -1,0 +1,7 @@
+{
+  "name": "meuclube",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
