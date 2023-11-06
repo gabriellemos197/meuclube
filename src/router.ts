@@ -19,20 +19,24 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/tabs',
     component: () => import('@/views/tabs/TabsPage.vue'),
+    beforeEnter: privateRoute,
     children: [
       {
         path: 'inicio',
         name: 'inicio',
-        component: () => import('@/views/tabs/Tab1Page.vue')
+        component: () => import('@/views/tabs/Tab1Page.vue'),
+        beforeEnter: privateRoute
       },
       {
         path: 'about',
         name: 'about',
-        component: () => import('@/views/tabs/Tab2Page.vue')
+        component: () => import('@/views/tabs/Tab2Page.vue'),
+        beforeEnter: privateRoute
       }
     ]
   },
-  { path: '/', redirect: 'login' }
+  { path: '/', 
+    redirect: 'login', }
 ];
 
 const router = createRouter({
